@@ -1,585 +1,725 @@
 <html xmlns:ganttproject="http://ganttproject.sf.net/">
-    <head>
-        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>GanttProject - Bar</title>
-        <style>
-	    A:link {
-		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
-		FONT-SIZE: 14px ; COLOR: black;
-	    }
-	    A:visited {
-		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
-		FONT-SIZE: 14px ; COLOR: black; BACKGROUND: none
-	    }
-	    A:hover {
-		FONT-WEIGHT: bold;  TEXT-DECORATION: none;
-		FONT-SIZE: 14px ; COLOR: white ; BACKGROUND: #6d9ec6;
-	    }
-	    .notes {
-	      padding-left: 10px;
-	    }
-	    .notes pre {
-	      font-family: Arial, Helvetica;
-	      font-size: 10px;
-	      margin-top: 0px;
-	      padding-top: 0px;
-	      margin-bottom: 5px;
-	    }
-	    .attachment {
-	      padding-left: 10px;
-	    }
-	    .attachment a:link {
-	      font-weight: normal;
-	      font-size: 12px;
-	      color: #6d9ec6;
-	      background: white;
-	    }
-	    .attachment a:hover {
-	      font-weight: normal;
-	      text-decoration: underline;
-	      font-size: 12px;
-	      color: #6d9ec6;
-	      background: white;
-	    }
-	    .attachment a:visited {
-	      font-weight: normal;
-	      font-size: 12px;
-	      background: white;
-	      color: gray;
-	    }
-	    TD {
-		FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
-	    }
-	    UL {
-		FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
-	    }
-	    LI {
-		FONT-SIZE: 12px; FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
-	    }
-	    H1 {
-		FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #6d9ec6;
-	    }
-	    H2 {
-		FONT-WEIGHT: bold; FONT-SIZE: 16pt; COLOR: #000000;
-	    }
-	    H3 {
-		FONT-WEIGHT: bold; FONT-SIZE: 13pt; COLOR: #6d9ec6;
-	    }
-	    H4 {
-		FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000;
-	    }
-	    H5 {
-		FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #6d9ec6;
-	    }
-	    H6 {
-		FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000000
-	    }
 
-	    </style>
-    </head>
-    <body bgcolor="white">
+<head>
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>GanttProject - Bar</title>
+    <style>
+        A:link {
+            FONT-WEIGHT: bold;
+            TEXT-DECORATION: none;
+            FONT-SIZE: 14px;
+            COLOR: black;
+        }
+
+        A:visited {
+            FONT-WEIGHT: bold;
+            TEXT-DECORATION: none;
+            FONT-SIZE: 14px;
+            COLOR: black;
+            BACKGROUND: none
+        }
+
+        A:hover {
+            FONT-WEIGHT: bold;
+            TEXT-DECORATION: none;
+            FONT-SIZE: 14px;
+            COLOR: white;
+            BACKGROUND: #6d9ec6;
+        }
+
+        .notes {
+            padding-left: 10px;
+        }
+
+        .notes pre {
+            font-family: Arial, Helvetica;
+            font-size: 10px;
+            margin-top: 0px;
+            padding-top: 0px;
+            margin-bottom: 5px;
+        }
+
+        .attachment {
+            padding-left: 10px;
+        }
+
+        .attachment a:link {
+            font-weight: normal;
+            font-size: 12px;
+            color: #6d9ec6;
+            background: white;
+        }
+
+        .attachment a:hover {
+            font-weight: normal;
+            text-decoration: underline;
+            font-size: 12px;
+            color: #6d9ec6;
+            background: white;
+        }
+
+        .attachment a:visited {
+            font-weight: normal;
+            font-size: 12px;
+            background: white;
+            color: gray;
+        }
+
+        TD {
+            FONT-SIZE: 12px;
+            COLOR: black;
+            FONT-STYLE: normal;
+            FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+        }
+
+        UL {
+            FONT-SIZE: 12px;
+            FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+        }
+
+        LI {
+            FONT-SIZE: 12px;
+            FONT-FAMILY: Arial, Helvetica, Geneva, sans-serif
+        }
+
+        H1 {
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 16pt;
+            COLOR: #6d9ec6;
+        }
+
+        H2 {
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 16pt;
+            COLOR: #000000;
+        }
+
+        H3 {
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 13pt;
+            COLOR: #6d9ec6;
+        }
+
+        H4 {
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 13px;
+            COLOR: #000000;
+        }
+
+        H5 {
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 10pt;
+            COLOR: #6d9ec6;
+        }
+
+        H6 {
+            FONT-WEIGHT: bold;
+            FONT-SIZE: 10pt;
+            COLOR: #000000
+        }
+    </style>
+</head>
+
+<body bgcolor="white">
+    <center>
+        <style>
+            div.project_name {
+                font-size: 150%;
+                color: black;
+                font-weight: bold;
+                border-top: solid #6d9ec6 5px;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                padding-left: 5px;
+            }
+
+            div.page_links {
+                background: #6d9ec6;
+                text-align: center;
+            }
+        </style>
         <center>
-            <style>
-div.project_name {
-  font-size: 150%;
-  color: black;
-  font-weight: bold;
-  border-top: solid #6d9ec6 5px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 5px;
-}
-div.page_links {
-  background: #6d9ec6;
-  text-align: center;
-}
-</style>
-            <center>
-                <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td bgcolor="#dddddd">
-                            <div class="project_name">Untitled Gantt Project</div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="page_links">
-                                <a href="Bar.html"></a>  |
-          <a href="Bar-chart.html">Диаграмма Ганта</a> |
-          <a href="Bar-tasks.html">Задача</a> |
-          <a href="Bar-resources.html">Человек</a>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
-            </center>
-            <br>
-            <style>
-td.header {
-  background: #dddddd;
-  margin: 0;
-  padding-left: 3px;
-  padding-right: 3px;
-  padding-top: 2px;
-  padding-bottom:1px;
-  border-bottom: solid black 2px;
-}
-td.cell {
-  margin: 0;
-  margin-top: 2px;
-  padding-left: 3px;
-  padding-right: 3px;
-  padding-top: 2px;
-  padding-bottom:1px;
-}
-div.cell {
-}
-h5.header {
-  margin-left: 2px;
-  margin-top: 2px;
-}
-</style>
-            <table border="0" cellpadding="0" cellspacing="0">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
                 <tr>
-                    <td valign="top" class="header">
-                        <h5 class="header">Name</h5>
-                    </td><td valign="top" class="header">
-                        <h5 class="header">Begin date</h5>
-                    </td><td valign="top" class="header">
-                        <h5 class="header">End date</h5>
-                    </td><td valign="top" class="header">
-                        <h5 class="header">Человек</h5>
+                    <td bgcolor="#dddddd">
+                        <div class="project_name">Untitled Gantt Project</div>
                     </td>
                 </tr>
                 <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Подготовка и финансирование</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">15.01.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">05.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Регистрация ООО на УСН</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">15.01.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">21.01.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Расчетный счет</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">22.01.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">22.01.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Получить финансирование</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">23.01.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">05.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Подготовка помещения</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27.03.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Найти помещение</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">19.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Проверить помещение и его документы</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">23.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Провести техническое обследование</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">20.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">24.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Взять помещение в аренду</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">25.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">26.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Разработка дизайн-проекта</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">09.03.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Выполнение ремонтно-монтажных работ</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.03.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27.03.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Установка декора первой темы</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">30.03.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">30.03.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Взаимодействие с другими организациями</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">31.07.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Договор о вывозе мусора</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Согласование МЧС и Росптребнадзор</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">13.04.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">08.05.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Договоры на обслуживание всякого-разного</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">09.03.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Лицензия</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">11.05.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">31.07.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Оборудование и ПО</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">25.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.04.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Составить спецификацию на оборудование</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">25.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Заказ, доставка, монтаж и пуск оборудования</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">02.03.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.04.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Набор и обучение персонала</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">07.05.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Разработать регламенты</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">16.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Найти сотрудников</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">30.04.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Обучить сотрудников</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">01.05.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">07.05.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Заключить договоры с поставщиками</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">03.08.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">07.08.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Маркетинг и открытие</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.08.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Рекламная компания в соцсетях</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">07.08.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
-                </tr>
-                <tr>
-                    <td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">Проведение открытия</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.08.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell">
-                        <div style="margin:0; padding:0; padding-left:0.5em">
-                            <div style="margin: 0; padding: 0; text-align: ;">10.08.2026</div>
-                        </div>
-                    </td><td valign="top" class="cell"></td>
+                    <td>
+                        <div class="page_links">
+                            <a href="Bar.html"></a> |
+                            <a href="index.html">Диаграмма Ганта</a> |
+                            <a href="Bar-tasks.html">Задача</a> |
+                            <a href="Bar-resources.html">Человек</a>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </center>
         <br>
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <style>
+            td.header {
+                background: #dddddd;
+                margin: 0;
+                padding-left: 3px;
+                padding-right: 3px;
+                padding-top: 2px;
+                padding-bottom: 1px;
+                border-bottom: solid black 2px;
+            }
+
+            td.cell {
+                margin: 0;
+                margin-top: 2px;
+                padding-left: 3px;
+                padding-right: 3px;
+                padding-top: 2px;
+                padding-bottom: 1px;
+            }
+
+            div.cell {}
+
+            h5.header {
+                margin-left: 2px;
+                margin-top: 2px;
+            }
+        </style>
+        <table border="0" cellpadding="0" cellspacing="0">
             <tr>
-                <td bgcolor="#6d9ec6" width="50%"><font color="#FFFFFF"><b>Ganttproject (3.3.3316)</b></font></td><td bgcolor="#6d9ec6" width="50%" align="right"><b><a href="http://ganttproject.biz">ganttproject.biz</a></b>
-                    <br>
-                    <b>03.12.2025 - 03:46:34</b></td>
+                <td valign="top" class="header">
+                    <h5 class="header">Name</h5>
+                </td>
+                <td valign="top" class="header">
+                    <h5 class="header">Begin date</h5>
+                </td>
+                <td valign="top" class="header">
+                    <h5 class="header">End date</h5>
+                </td>
+                <td valign="top" class="header">
+                    <h5 class="header">Человек</h5>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Подготовка и финансирование</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">15.01.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">05.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Регистрация ООО на УСН</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">15.01.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">21.01.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Расчетный счет</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">22.01.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">22.01.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Получить финансирование</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">23.01.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">05.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Подготовка помещения</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">27.03.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Найти помещение</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">19.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Проверить помещение и его документы</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">20.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">23.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Провести техническое обследование</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">20.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">24.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Взять помещение в аренду</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">25.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">26.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Разработка дизайн-проекта</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">09.03.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Выполнение ремонтно-монтажных работ</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">10.03.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">27.03.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Установка декора первой темы</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">30.03.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">30.03.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Взаимодействие с другими организациями</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">31.07.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Договор о вывозе мусора</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Согласование МЧС и Росптребнадзор</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">13.04.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">08.05.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Договоры на обслуживание всякого-разного</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">09.03.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Лицензия</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">11.05.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">31.07.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Оборудование и ПО</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">25.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">10.04.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Составить спецификацию на оборудование</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">25.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">27.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Заказ, доставка, монтаж и пуск оборудования
+                        </div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">02.03.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">10.04.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Набор и обучение персонала</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">07.05.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Разработать регламенты</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">16.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Найти сотрудников</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">30.04.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Обучить сотрудников</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">01.05.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">07.05.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Заключить договоры с поставщиками</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">03.08.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">07.08.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Маркетинг и открытие</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">10.08.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Рекламная компания в соцсетях</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">06.02.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">07.08.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
+            </tr>
+            <tr>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">Проведение открытия</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">10.08.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell">
+                    <div style="margin:0; padding:0; padding-left:0.5em">
+                        <div style="margin: 0; padding: 0; text-align: ;">10.08.2026</div>
+                    </div>
+                </td>
+                <td valign="top" class="cell"></td>
             </tr>
         </table>
-    </body>
+    </center>
+    <br>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+            <td bgcolor="#6d9ec6" width="50%">
+                <font color="#FFFFFF"><b>Ganttproject (3.3.3316)</b></font>
+            </td>
+            <td bgcolor="#6d9ec6" width="50%" align="right"><b><a
+                        href="http://ganttproject.biz">ganttproject.biz</a></b>
+                <br>
+                <b>03.12.2025 - 03:46:34</b>
+            </td>
+        </tr>
+    </table>
+</body>
+
 </html>
